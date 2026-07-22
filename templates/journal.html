@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <h2 class="mb-4">My Journal</h2>
+
+    <form method="POST">
+
+        <div class="mb-3">
+            <label class="form-label">Title</label>
+            <input
+                type="text"
+                class="form-control"
+                name="title"
+                required
+            >
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Journal Entry</label>
+            <textarea
+                class="form-control"
+                name="content"
+                rows="5"
+                required
+            ></textarea>
+        </div>
+
+        <button class="btn btn-primary">
+            Save Entry
+        </button>
+
+    </form>
+
+    <hr>
+
+    {% for entry in entries %}
+
+    <div class="card mt-3">
+        <div class="card-body">
+
+            <h4>{{ entry.title }}</h4>
+
+            <small class="text-muted">
+                {{ entry.created_at.strftime("%d %b %Y • %I:%M %p") }}
+            </small>
+
+            <hr>
+
+            <p>
+                <strong>Emotion:</strong>
+
+                {% if entry.mood == "joy" %}
+                    <span class="badge bg-success">😊 Joy</span>
+
+                {% elif entry.mood == "sadness" %}
+                    <span class="badge bg-primary">😢 Sadness</span>
+
+                {% elif entry.mood == "anger" %}
+                    <span class="badge bg-danger">😠 Anger</span>
+
+                {% elif entry.mood == "fear" %}
+                    <span class="badge bg-dark">😨 Fear</span>
+
+                {% elif entry.mood == "love" %}
+                    <span class="badge bg-danger">❤️ Love</span>
+
+                {% elif entry.mood == "surprise" %}
+                    <span class="badge bg-warning text-dark">😲 Surprise</span>
+                {% elif entry.mood == "neutral" %}
+                    <span class="badge bg-secondary">😐 Neutral</span>
+
+                {% elif entry.mood == "disgust" %}
+                    <span class="badge bg-success">🤢 Disgust</span>
+                {% else %}
+                    <span class="badge bg-secondary">
+                        {{ entry.mood.title() }}
+                    </span>
+                {% endif %}
+            </p>
+
+            <p>
+                <strong>Confidence:</strong>
+
+                {{ "%.2f"|format(entry.confidence) }}%
+            </p>
+
+            <div class="alert alert-info mt-3">
+
+                <strong>🤖 AI Summary</strong>
+
+                <br><br>
+
+                {{ entry.ai_summary }}
+
+            </div>
+
+            <hr>
+
+            <div class="mt-3">
+
+                <h6>Your Journal</h6>
+
+                <p style="line-height:1.8;">
+                    {{ entry.content }}
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

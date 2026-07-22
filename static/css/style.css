@@ -1,0 +1,468 @@
+/* ===========================
+   Google Font
+=========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ===========================
+   Reset
+=========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ===========================
+   Body
+=========================== */
+
+body{
+
+    min-height:100vh;
+
+    background:linear-gradient(
+        135deg,
+        #0f172a,
+        #1e293b,
+        #0f172a
+    );
+
+    color:white;
+
+}
+
+/* ===========================
+   Navbar
+=========================== */
+
+.navbar{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 60px;
+
+    background:rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(12px);
+
+    border-bottom:1px solid rgba(255,255,255,0.08);
+
+    position:sticky;
+
+    top:0;
+
+}
+
+.logo{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#38bdf8;
+
+}
+
+.navbar a{
+
+    color:white;
+
+    text-decoration:none;
+
+    margin-left:30px;
+
+    transition:.3s;
+
+}
+
+.navbar a:hover{
+
+    color:#38bdf8;
+
+}
+
+/* ===========================
+   Main Container
+=========================== */
+
+.container{
+
+    width:90%;
+
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:50px 20px;
+
+}
+
+/* ===========================
+   Hero Section
+=========================== */
+
+.hero{
+
+    text-align:center;
+
+    margin-top:80px;
+
+}
+
+.hero h1{
+
+    font-size:60px;
+
+    margin-bottom:20px;
+
+}
+
+.hero p{
+
+    width:70%;
+
+    margin:auto;
+
+    font-size:20px;
+
+    color:#cbd5e1;
+
+    line-height:1.8;
+
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.hero-buttons{
+
+    margin-top:45px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:25px;
+
+}
+
+button{
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    font-weight:600;
+
+}
+
+.primary-btn{
+
+    background:#38bdf8;
+
+    color:white;
+
+}
+
+.primary-btn:hover{
+
+    background:#0ea5e9;
+
+    transform:translateY(-4px);
+
+}
+
+.secondary-btn{
+
+    background:white;
+
+    color:#0f172a;
+
+}
+
+.secondary-btn:hover{
+
+    transform:translateY(-4px);
+
+}
+
+/* ===========================
+   Forms
+=========================== */
+
+.form-card{
+
+    width:450px;
+
+    margin:70px auto;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(16px);
+
+    padding:40px;
+
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,.1);
+
+}
+
+.form-card h2{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+input,
+textarea{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-bottom:18px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,.12);
+
+    color:white;
+
+    font-size:16px;
+
+    outline:none;
+
+}
+
+textarea{
+
+    min-height:180px;
+
+    resize:vertical;
+
+}
+
+input::placeholder,
+textarea::placeholder{
+
+    color:#cbd5e1;
+
+}
+
+.form-card button{
+
+    width:100%;
+
+    background:#38bdf8;
+
+    color:white;
+
+}
+
+.form-card button:hover{
+
+    background:#0ea5e9;
+
+}
+
+.link-text{
+
+    margin-top:20px;
+
+    text-align:center;
+
+}
+
+.link-text a{
+
+    color:#38bdf8;
+
+    text-decoration:none;
+
+}
+
+/* ===========================
+   Flash Messages
+=========================== */
+
+.flash{
+
+    padding:14px;
+
+    margin-bottom:20px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+}
+
+.flash.success{
+
+    background:#16a34a;
+
+}
+
+.flash.danger{
+
+    background:#dc2626;
+
+}
+
+.flash.info{
+
+    background:#2563eb;
+
+}
+
+/* ===========================
+   Dashboard Cards
+=========================== */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+    margin-top:40px;
+
+}
+
+.card{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(14px);
+
+    padding:30px;
+
+    border-radius:20px;
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.card h3{
+
+    color:#38bdf8;
+
+    margin-bottom:10px;
+
+}
+
+/* ===========================
+   Journal Cards
+=========================== */
+
+.journal-card{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(14px);
+
+    border-radius:18px;
+
+    padding:25px;
+
+    margin-top:25px;
+
+}
+
+.journal-card h3{
+
+    color:#38bdf8;
+
+    margin-bottom:10px;
+
+}
+
+.journal-card small{
+
+    color:#94a3b8;
+
+}
+
+.journal-card p{
+
+    margin-top:15px;
+
+    line-height:1.8;
+
+    color:#e2e8f0;
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:768px){
+
+    .navbar{
+
+        flex-direction:column;
+
+        gap:20px;
+
+        padding:20px;
+
+    }
+
+    .hero h1{
+
+        font-size:42px;
+
+    }
+
+    .hero p{
+
+        width:100%;
+
+        font-size:18px;
+
+    }
+
+    .hero-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .form-card{
+
+        width:100%;
+
+    }
+
+}

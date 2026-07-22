@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<div class="hero">
+
+    <h1>🧠 MindTrack AI</h1>
+
+    <p>
+        Your personal AI-powered mental wellness journal.
+        Track your emotions, understand your mental well-being,
+        and gain AI-driven insights every day.
+    </p>
+
+    {% if not current_user.is_authenticated %}
+
+    <div class="hero-buttons">
+
+        <a href="{{ url_for('register') }}">
+            <button class="primary-btn">
+                Get Started
+            </button>
+        </a>
+
+        <a href="{{ url_for('login') }}">
+            <button class="secondary-btn">
+                Login
+            </button>
+        </a>
+
+    </div>
+
+    {% else %}
+
+    <a href="{{ url_for('dashboard') }}">
+        <button class="primary-btn">
+            Go to Dashboard
+        </button>
+    </a>
+
+    {% endif %}
+
+</div>
+
+{% endblock %}
